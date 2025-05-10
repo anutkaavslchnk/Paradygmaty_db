@@ -1,5 +1,6 @@
 import createHttpError from "http-errors";
 import { createTodo, deleteToDo, getAllTodos, getToDoById } from "../services/todo.js"
+import { checkWithProlog } from "../services/prolog.js";
 
 
 
@@ -23,10 +24,32 @@ export const getToDoController=async(req,res)=>{
     res.json(todos)
 }
 
-export const createToDoController=async(req,res)=>{
-const todo=await createTodo(req.body);
-res.status(201).json(todo)
-}
+export const createToDoController = async (req, res, next) => {
+    try {
+        const { todo } = req.body;
+
+        if (!todo) {
+            return res.status(400).json({ message: 'Text is required' });
+        }
+
+      
+        const existingTodos = await getAllTodos();
+        const existingTexts = existingTodos.map(todo => todo.todo);
+
+        
+        const prologResult = await checkWithProlog(todo, existingTexts);
+
+        if (prologResult === 'error') {
+            return res.status(400).json({ message: 'Similar task already exists (based on category)' });
+        }
+
+        
+        const newTodo = await createTodo({ todo });
+        res.status(201).json(newTodo);
+    } catch (err) {
+        next(err);
+    }
+};
 
 export const deleteToDoController=async(req,res,next)=>{
     const {todoId}=req.params;
