@@ -1,5 +1,5 @@
 import createHttpError from "http-errors";
-import { createTodo, deleteToDo, getAllTodos, getToDoById } from "../services/todo.js"
+import { createTodo, deleteToDo, getAllTodos, getToDoById, patchToDo } from "../services/todo.js"
 import { checkWithProlog } from "../services/prolog.js";
 
 
@@ -59,4 +59,20 @@ export const deleteToDoController=async(req,res,next)=>{
         return;
     }
     res.status(204).send();
+}
+export const editToDoController=async(req,res,next)=>{
+    try {
+        const {todoId}=req.params;
+ const newToDo = await patchToDo(todoId, req.body);
+         if (!newToDo) {
+            return next(createHttpError(404, 'ToDo not found'));
+        }
+             res.json({
+            status: 200,
+            message: "Successfully patched a todo!",
+       data:newToDo,
+        });
+    } catch (error) {
+        next(error)
+    }
 }

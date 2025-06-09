@@ -20,3 +20,12 @@ export const deleteToDo=async(todoId)=>{
     });
     return todo;
 }
+
+export const patchToDo=async(todoId,payload,options)=>{
+const res=await ToDoCollection.findOneAndUpdate({_id:todoId}, payload,{
+    new:true,
+    ...options
+});
+if(!res) return null;
+return res;
+}
