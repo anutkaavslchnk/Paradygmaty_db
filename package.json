@@ -22,6 +22,7 @@
     "dev": "nodemon src/index.js",
     "lint": "eslint src/**/*.js",
     "start": "node src/index.js"
+
   },
   "keywords": [],
   "author": "Anna <anutochkaaaaa14@gmail.com>",
