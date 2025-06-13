@@ -5,59 +5,62 @@
 % src/prolog/todo.pl
 
 % mapowanie słów kluczowych na kategorie
-% Zakupy
-keyword(zakupy, ['kup', 'zakup', 'sklep', 'market', 'biedronka', 'lidl']).
+% Zakupy spożywcze
+keyword(zakupy_spozywcze, ['kup', 'zakupy', 'sklep', 'market', 'biedronka', 'lidl', 'carrefour', 'produkty']).
 
-% Sprzątanie
-keyword(sprzatanie, ['posprzataj', 'odkurz', 'sprzatanie', 'umyj', 'umyc', 'czysc', 'mycie', 'sprzatanie']).
+% Zmywanie naczyń
+keyword(zmywanie_naczyn, ['naczynia', 'umyj naczynia', 'zmywarka', 'pozmywaj', 'zmywanie']).
 
-% Praca
-keyword(praca, ['napisz', 'projekt', 'kod', 'praca', 'raport', 'spotkanie']).
+% Czyszczenie podłóg
+keyword(czyszczenie_podlog, ['odkurz', 'odkurzanie', 'zamiec', 'mopuj', 'mopowanie', 'zamiatanie']).
 
-% Gotowanie
-keyword(gotowanie, ['gotuj', 'przepis', 'obiad', 'kolacja', 'sniadanie', 'pieczenie', 'smazenie']).
+% Porządki ogólne
+keyword(porzadki, ['sprzataj', 'posprzataj', 'porzadki', 'czysc', 'czyszczenie', 'sprzatanie', 'scieranie']).
 
-% Sport
-keyword(sport, ['cwicz', 'trening', 'bieganie', 'silownia', 'joga', 'rower', 'pilka']).
+% Pranie i ubrania
+keyword(pranie, ['pranie', 'wypierz', 'ubrania', 'pralka', 'suszenie', 'prasowanie']).
 
-% Nauka
-keyword(nauka, ['uczenie', 'czytaj', 'nauka', 'kurs', 'szkola', 'studia', 'lekcja', 'egzamin']).
+% Praca biurowa
+keyword(praca_biurowa, ['praca', 'biuro', 'projekt', 'raport', 'spotkanie', 'mail', 'zadanie']).
 
-% Zdrowie
-keyword(zdrowie, ['lekarz', 'dentysta', 'badanie', 'apteka', 'zdrowie', 'szpital', 'rehabilitacja']).
+% Gotowanie i kuchnia
+keyword(gotowanie, ['gotuj', 'obiad', 'kolacja', 'sniadanie', 'przepis', 'pieczenie', 'smazenie']).
 
-% Finanse
-keyword(finanse, ['oplac', 'faktura', 'rachunek', 'bank', 'przelew', 'budzet', 'wydatki', 'oszczednosci']).
+% Ćwiczenia fizyczne
+keyword(aktywnosc_fizyczna, ['cwicz', 'trening', 'joga', 'bieganie', 'silownia', 'fitness', 'rower']).
+
+% Nauka i edukacja
+keyword(nauka, ['nauka', 'uczenie', 'czytaj', 'studia', 'szkola', 'egzamin', 'lekcja', 'kurs']).
+
+% Sprawy zdrowotne
+keyword(zdrowie, ['lekarz', 'dentysta', 'apteka', 'badanie', 'szpital', 'rehabilitacja', 'wizyta']).
+
+% Finanse i rachunki
+keyword(finanse, ['oplac', 'rachunek', 'faktura', 'bank', 'przelew', 'karta', 'oszczednosci', 'pieniadze']).
 
 % Podróże
-keyword(podroze, ['podroz', 'wycieczka', 'lot', 'hotel', 'rezerwacja', 'wakacje', 'bilety']).
+keyword(podroze, ['lot', 'wycieczka', 'hotel', 'rezerwacja', 'podroz', 'wakacje', 'urlop']).
 
 % Rozrywka
-keyword(rozrywka, ['film', 'serial', 'koncert', 'gra', 'rozrywka', 'kino', 'teatr', 'impreza']).
+keyword(rozrywka, ['film', 'koncert', 'gra', 'rozrywka', 'kino', 'serial', 'teatr', 'impreza']).
 
-% Rodzina
-keyword(rodzina, ['dziecko', 'rodzina', 'spotkanie', 'urodziny', 'impreza', 'babcia', 'dziadek', 'rodzice']).
+% Obowiązki rodzinne
+keyword(rodzina, ['rodzina', 'dziecko', 'urodziny', 'rodzice', 'babcia', 'dziadek', 'impreza rodzinna']).
 
-% Ogród
-keyword(ogrod, ['kwiaty', 'ogrod', 'podlej', 'sadzic', 'koszenie', 'grabić', 'nawozić']).
+% Pielęgnacja ogrodu
+keyword(ogrod, ['ogrod', 'kwiaty', 'koszenie', 'sadzic', 'podlej', 'grabić', 'nawozić']).
 
-% Motoryzacja
-keyword(motoryzacja, ['samochod', 'auto', 'benzyna', 'przeglad', 'opony', 'naprawa']).
+% Auto i motoryzacja
+keyword(motoryzacja, ['samochod', 'benzyna', 'przeglad', 'opony', 'naprawa', 'myjnia', 'ubezpieczenie']).
 
-% Technologia
-keyword(technologia, ['komputer', 'telefon', 'aplikacja', 'oprogramowanie', 'aktualizacja', 'internet']).
-
-% Zwierzęta
-keyword(zwierzeta, ['pies', 'kot', 'weterynarz', 'karmienie', 'spacer', 'zwierzeta', 'akwarium']).
-
-% Hobby
-keyword(hobby, ['rysowanie', 'malowanie', 'fotografia', 'muzyka', 'czytanie', 'modelarstwo']).
+% Urzędy i sprawy administracyjne
+keyword(administracja, ['poczta', 'urzad', 'paszport', 'dowod', 'podatki', 'rejestracja', 'formularz']).
 
 % Zakupy online
-keyword(zakupy_online, ['allegro', 'zamowienie', 'dostawa', 'kurier', 'paczka', 'sklep internetowy']).
+keyword(zakupy_online, ['allegro', 'dostawa', 'kurier', 'zamowienie', 'paczka', 'sklep internetowy']).
 
-% Administracja
-keyword(administracja, ['poczta', 'urzad', 'dowod', 'paszport', 'rejestracja', 'podatki']).
+% Zwierzęta domowe
+keyword(zwierzeta, ['pies', 'kot', 'karmienie', 'weterynarz', 'spacer z psem', 'zwierzak', 'klatka']).
 
 
 % znajdź kategorię na podstawie słów kluczowych
@@ -77,3 +80,5 @@ check_todo(New, ExistingList) :-
     write('error'), !.
 check_todo(_, _) :-
     write('ok').
+get_category(Text, Category) :-
+    (find_category(Text, Category) -> true ; Category = 'Uncategorized').

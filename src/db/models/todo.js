@@ -6,6 +6,10 @@ const todoSchema=new Schema({
         required:true,
     },
 
+deadline:{
+    type:Date,
+    required:true
+}
 },
 {
     timestamps: true,

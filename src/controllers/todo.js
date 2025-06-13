@@ -26,7 +26,7 @@ export const getToDoController=async(req,res)=>{
 
 export const createToDoController = async (req, res, next) => {
     try {
-        const { todo } = req.body;
+        const { todo,deadline } = req.body;
 
         if (!todo) {
             return res.status(400).json({ message: 'Text is required' });
@@ -44,7 +44,7 @@ export const createToDoController = async (req, res, next) => {
         }
 
         
-        const newTodo = await createTodo({ todo });
+        const newTodo = await createTodo({ todo, deadline });
         res.status(201).json(newTodo);
     } catch (err) {
         next(err);
@@ -63,9 +63,23 @@ export const deleteToDoController=async(req,res,next)=>{
 export const editToDoController=async(req,res,next)=>{
     try {
         const {todoId}=req.params;
+        const {todo,deadline}=req.body;
  const newToDo = await patchToDo(todoId, req.body);
          if (!newToDo) {
             return next(createHttpError(404, 'ToDo not found'));
+        }
+
+
+
+
+          const existingTodos = await getAllTodos();
+        const existingTexts = existingTodos.map(todo => todo.todo);
+
+        
+        const prologResult = await checkWithProlog(todo, existingTexts);
+
+        if (prologResult === 'error') {
+            return res.status(400).json({ message: 'Similar task already exists (based on category)' });
         }
              res.json({
             status: 200,
