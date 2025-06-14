@@ -2,7 +2,7 @@
 
 
 
-% src/prolog/todo.pl
+
 
 % mapowanie słów kluczowych na kategorie
 % Zakupy spożywcze
@@ -15,22 +15,22 @@ keyword(zmywanie_naczyn, ['naczynia', 'umyj naczynia', 'zmywarka', 'pozmywaj', '
 keyword(czyszczenie_podlog, ['odkurz', 'odkurzanie', 'zamiec', 'mopuj', 'mopowanie', 'zamiatanie']).
 
 % Porządki ogólne
-keyword(porzadki, ['sprzataj', 'posprzataj', 'porzadki', 'czysc', 'czyszczenie', 'sprzatanie', 'scieranie']).
+keyword(porzadki, ['sprzataj', 'posprzataj', 'porzadki', 'czysc', 'czyszczenie', 'sprzatanie', 'scieranie', 'sprzatanie', 'posprzatac']).
 
 % Pranie i ubrania
-keyword(pranie, ['pranie', 'wypierz', 'ubrania', 'pralka', 'suszenie', 'prasowanie']).
+keyword(pranie, ['pranie', 'wypierz', 'ubrania', 'pralka', 'suszenie', 'prasowanie', 'poprasowac']).
 
 % Praca biurowa
 keyword(praca_biurowa, ['praca', 'biuro', 'projekt', 'raport', 'spotkanie', 'mail', 'zadanie']).
 
 % Gotowanie i kuchnia
-keyword(gotowanie, ['gotuj', 'obiad', 'kolacja', 'sniadanie', 'przepis', 'pieczenie', 'smazenie']).
+keyword(gotowanie, ['gotuj', 'obiad', 'kolacja', 'sniadanie', 'przepis', 'pieczenie', 'smazenie', 'ugotuj', 'nagotuj']).
 
 % Ćwiczenia fizyczne
 keyword(aktywnosc_fizyczna, ['cwicz', 'trening', 'joga', 'bieganie', 'silownia', 'fitness', 'rower']).
 
 % Nauka i edukacja
-keyword(nauka, ['nauka', 'uczenie', 'czytaj', 'studia', 'szkola', 'egzamin', 'lekcja', 'kurs']).
+keyword(nauka, ['nauka', 'uczenie', 'czytaj', 'studia', 'szkola', 'egzamin', 'lekcja', 'kurs', 'nauczyc sie', 'uczyc sie']).
 
 % Sprawy zdrowotne
 keyword(zdrowie, ['lekarz', 'dentysta', 'apteka', 'badanie', 'szpital', 'rehabilitacja', 'wizyta']).
